@@ -31,6 +31,11 @@ const chalk = new Chalk({ level: 3 });
 
    const availableMascot = await fetch(process.env.CARDS_ENDPOINT).then((res) => res.json());
 
+   if (availableMascot.length < 2) {
+      console.log(chalk.bold.red("\nYou need at least 2 mascots\n"));
+      return;
+   }
+
    const card1Selected = await select('Choose Fighter 1', {
       choices: availableMascot.map((m) => m.name)
    });

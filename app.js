@@ -54,7 +54,7 @@ const chalk = new Chalk({ level: 3 });
    });
 
    const selectedScenarioImport = require(
-      `${process.env.SCENARIOS_FOLDER}${selectedScenario.toLowerCase()}.js`
+      `${process.env.SCENARIOS_FOLDER}${selectedScenario}.js`
    );
 
    const scenario = new selectedScenarioImport();
